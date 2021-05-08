@@ -9,6 +9,7 @@ for i in range(len(allergenek)):
     allergenekszamokkal.append([allergenek[i],0])
 
 osszetevok=input("Adja meg az összetvőket vesszővel elválasztva, szóköz nélkül: ")
+#gluten,gluten,mogyoro,gluten,gluten,mogyoro,magvak,zeller,mustar,szezammag,rak,hal,hal,hal,kagylo,tej,zeller,tojas,tojas,tojas,tej,gluten,tej,zeller,tojas,tojas,tojas,tej,gluten
 
 listaösszetevok=osszetevok.split(",")
 for i in listaösszetevok:
@@ -22,7 +23,7 @@ for i in range(len(allergenekszamokkal)):
     csakszamok.append(allergenekszamokkal[i][1])
 
 
-#gluten,gluten,mogyoro,gluten,gluten,mogyoro,magvak,zeller,mustar,szezammag,rak,hal,hal,hal,kagylo,tej,zeller,tojas,tojas,tojas,tej,gluten,tej,zeller,tojas,tojas,tojas,tej,gluten
+
 szinek=[]
 for sor in fin:
     sor=sor.strip()
@@ -36,7 +37,7 @@ for sor in fin:
 fin.close()
 # fout.close()
 
-plt.xticks(rotation='vertical')
-plt.bar(allergenek, csakszamok,color=szinek)
+plt.xticks(rotation='vertical') #xtengely nevek
+plt.bar(allergenek, csakszamok,color=szinek) #oszlop diagram és szinek
 plt.savefig('kep.png',bbox_inches='tight')
 plt.show()
